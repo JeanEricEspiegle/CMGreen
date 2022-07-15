@@ -1,0 +1,111 @@
+body{
+  font-family: 'Bellota Text';
+  height:  auto;
+}
+
+footer{
+  bottom:  0;
+  width:  100%;
+  height:  10vh;
+  background-color:black;
+}
+
+#cont{
+  max-height:  40vh;
+  overflow: hidden;
+  display:  flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom:  2em;
+  margin:  0;
+}
+.navbar{
+  display:  flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-height: 8vh;
+  max-width:  30%;
+  margin-left:  35%;
+  margin-right:  35%;
+  justify-content: space-around;
+  margin-top:  0;
+  margin-bottom:  0;
+  align-content: center;
+  align-items: center;
+}
+
+.column{
+    -ms-flex: 1;
+    flex: 1;
+    max-width: 100%;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.card-custom{
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    z-index:  100;
+}
+
+.popover{
+  z-index:  501;
+}
+
+.btn.btn-link {
+    background: 0 0;
+    border-color: transparent;
+    color: black;
+    font-size: 1.5em;
+}
+
+.btn:hover{
+  transform: scale(1.25);
+  transition: all 0.25s;
+}
+
+
+#title-text{
+  display:  flex;
+  flex-direction: column;
+}
+
+.card-container{
+  display:  flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content:space-around;
+  margin-bottom:  2em;
+
+}
+
+.parallax-front h2{
+  text-align:center;
+  margin:  0;
+  font-size: 3.5em;
+}
+
+.parallax-front h1{
+  text-align:center;
+  margin:  0;
+  font-size: 5em;
+}
+
+.parallax .parallax-top-left{
+    height: 100%;
+  }
+
+.parallax .parallax-top-right{
+    height: 100%;
+  }
+
+.carousel .carousel-container{
+    height:  50vh;
+    margin-bottom:  1em;
+    overflow: hidden;
+  }
+
+  .img-responsive{
+    width:  100%;
+  }
