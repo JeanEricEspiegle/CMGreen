@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="top-container">
+	<div class="site-logo-left">
+		<img src="/static/logo.png">
+	</div>
+	<div class="site-title">
+		<h2>Chiang Mai </h2>
+		<h1>GREENS</h1>
+	</div>
+	<div class="site-menu">
+		<ul>
+	    	<li><a href="{{url_for('home')}}">HOME</li>
+	    	<li class="activated">SHOP LIST</a></li>
+	    	<li><a href="">CONTACT US</a></li>
+	    </ul>
+	</div>
+</div>
+
+<div class="shop-page-title">
+   	<h2>Cannabis dispensaries and retailers around Chiang Mai</h2>
+</div>
+
+  <div class="shopCollection">
+{%for i in range(0, len)%}
+		<div class="shopCard">
+			<div class="ShopName">
+				<h3>{{shopname[i]}}</h3>
+			</div>
+			<img class="shopimg" src="/static/{{ photo[i] }}">
+			<div class="location">
+				<p> A chill place, with live music every so often. Get a drink or get some green and enjoy your evening poolside.</p>
+				<p class="address"><b>Address</b>: {{ address[i] }}</p>
+			</div>
+			<button type="submit" onClick="location.href='{{url_for('displayShop',ID=shopname[i])}}'" class="btn" name="{{ID[i]}}">View Shop</button>
+		</div>
+{%endfor%}
+	</div>
+
+
+	
+{% endblock %}
+
+{% block script %}
+<script type=text/javascript>
+    $(function(){
+        $('.btn').bind('click', function(){
+            alert(this.name);
+        });
+    });
+</script>
+{% endblock %}

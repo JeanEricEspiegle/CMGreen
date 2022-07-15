@@ -1,0 +1,78 @@
+/*
+
+menu-colour: #D89D6A;
+article-colour:  #61D095;
+background colour:  #FFEADC;
+#DCB390
+#EBA05E
+#439775
+
+*/
+
+.shopItemCard{
+	height: 30vw;
+	width:  15vw;
+	position:  relative;
+	display:  flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	border:  0.5vw solid #439775;
+	margin: 1vw;
+	background-color:#61D095;
+
+}
+
+.itemImage{
+	margin:  0;
+	max-height: 13vw;
+	border: 0.25vw solid #439775;
+}
+
+.itemTitle h3{
+	font-size: 1.25vw;
+	margin-bottom:  1vw;
+	margin-top:  1vw;
+	color:  red;
+	-webkit-text-stroke: 0.5px black;
+}
+
+.itemCardDescription{
+	text-align:  justify;
+	max-height: 70%;
+	justify-content:space-between;
+	margin-left:  1vw;
+	margin-right:  1vw;
+	padding:  0;
+	overflow: hidden;
+}
+.itemCardDescription p{
+	margin-top: 1vw;
+	margin-bottom:  0;
+	font-size: 1vw;
+}
+.itemTable{
+	width:  100%;
+	margin-top:  1vw;
+	font-size:  1vw;
+}
+
+.itemTable th{
+	text-align: left;
+	background-color: blue;
+}
+
+.itemTable td{
+	border:1px solid black;
+	text-align: right;
+	background-color:yellowgreen
+}
+
+.card-collection{
+	display:  inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
