@@ -1,45 +1,96 @@
-{% extends 'main.html' %}
-{% block content %}
-<div class="retailer">
-	<div class="ret-display">
-		<img class="ret-img" src="/static/img3.jpg" />
-		<div class="ret-title">
-			<h1>Shop Title</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shop Name</title>
+	<meta name="description" content="A list/directory/database of weed/cannabis/kush/ganja and retailers/distributors/sellers in Chiang Mai."/>
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+	<div class="column col-sm-12 col-12 col-mx-auto" id="cont">
+	    <div class="parallax">
+			<div class="parallax-top-left" tabindex="1"></div>
+			<div class="parallax-top-right" tabindex="2"></div>
+			<div class="parallax-content">
+		    	<div class="parallax-front" id="title-text">
+		    		<h2>Chiang Mai</h2>
+		    		<h1>Greens</h1>
+		    	</div>
+		    	<div class="parallax-back">
+		    		<img src="background.jpg" class="img-responsive rounded" ...>
+		    	</div>
+		    </div>
 		</div>
-		<div class="ret-desc">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+
+	<header class="navbar navbar-center">
+		<a href="#" class="btn btn-link">Home</a>
+		<a href="#" class="btn btn-link">Shops</a>
+		<a href="#" class="btn btn-link">Strains</a>
+	</header>
+
+<!-- ################################################################################################################ -->
+
+	<div class="divider text-center" data-content="SHOP"></div>
+
+	<div class="shop-info-container">
+		<div class="shop-img">
+			<img src="img1.jpg"/>
 		</div>
-		<div class="ret-link">
+		<div class="text-container">
+			<div class="shop-name text-center">
+				<h2>Shop name</h2>
+			</div>
+			<div class="shop-description">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+			<div class="shop-address">
+				<p>25, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="button">
+				<a href="#" class="btn text-center">View on Google Maps</a>
+			</div>
 		</div>
 	</div>
 
-	<div class="ret-weed-display">
-		<div class="ret-weed-card">
-			<div class="ret-weed-pic">
-				<img src="/static/bug.jpg" />
-			</div>
-			<div class="ret-weed-desc">
-				<h3 class="weed-name">Weed Name</h3>
-				<p>Effects:</p>
-				<p>Type:</p>
-				<p>THC%:</p>
-				<p>Price/g:</p>
-			</div>
+<!--   #######################################################-->
+	<div class="divider text-center" data-content="STRAINS AVAILABLE"></div>
+
+	<div class="weed-card-collection">
+		
+
+	<div class="column col-2 col-xs-12 weed-custom">
+		<div class="card weed-card">
+			<div class="card-image">
+	          	<img class="img-responsive" src="img1.jpg" alt="OS X Yosemite">
+	        	</div>
+            	<div class="card-header">
+            		<div class="card-title h5">Weed name</div>
+            		<div class="card-subtitle text-gray">Sativa/Indica/Hybrid</div>
+	        	</div>
+	        	<div class="card-body">
+	        		<p class="desc">To make a contribution to the world by making tools for the mind that advance humankind.</p>
+	        		<p class="stats"> Price: </p>
+	        		<p class="stats"> THC%:</p>
+	        	</div>
+
+	        	<div class="button">
+					<a href="#" class="btn text-center">View Strain Info</a>
+				</div>
+
+	        </div>
 		</div>
 	</div>
-</div>
-{% endblock %}
 
-
-
-
-
-
-
-{% block script %}
-{% endblock %}
+</body>
+<footer></footer>
+</html>

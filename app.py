@@ -1,11 +1,6 @@
 import os
 import sqlite3
 import pandas as pd
-from base64 import b64encode
-from PIL import Image
-from io import BytesIO
-import io
-import codecs
 
 
 from flask import Flask
@@ -136,49 +131,44 @@ def getShopInfo(id):
     return(info)
 ##############################################################################
 def getShopWeed(id):
-    match id:
-        case "High Queen CNX":
+
+        if id == "High Queen CNX":
             return " "
-        case "Deep Green @ Deejai Garden":
+        elif id == "Deep Green @ Deejai Garden":
             return " "
-        case "Rasta Cafe":
+        elif id == "Rasta Cafe":
             return " "
-        case "Cannabis Cafe":
+        elif id == "Cannabis Cafe":
             conn = sqlite3.connect("shops_data.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM CannabisCafe")
-
             rows = cur.fetchall()
             return rows
-        case "Shogun Minimart":
+        elif id == "Shogun Minimart":
             return " "
-        case "Mavoix Coffee":
+        elif id == "Mavoix Coffee":
             conn = sqlite3.connect("shops_data.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM MavoixCoffee")
-
             rows = cur.fetchall()
             return rows
-        case "SPV Cafe":
+        elif id == "SPV Cafe":
             conn = sqlite3.connect("shops_data.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM SPV")
-
             rows = cur.fetchall()
             return rows
-        case "M Studio Cannabis Dispensary":
+        elif id == "M Studio Cannabis Dispensary":
             conn = sqlite3.connect("shops_data.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM MStudio")
-
             rows = cur.fetchall()
             return rows
-        case "Green Dog":
+        elif id == "Green Dog":
             conn = sqlite3.connect("shops_data.db")
             cur = conn.cursor()
             cur.execute("SELECT * FROM GreenDog")
-
             rows = cur.fetchall()
             return rows
-        case "420 Cannabis Cafe Bar & Restaurant":
+        elif id == "420 Cannabis Cafe Bar & Restaurant":
             return " "

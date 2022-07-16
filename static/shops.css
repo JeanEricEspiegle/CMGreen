@@ -1,0 +1,32 @@
+.card{
+	overflow: hidden;
+	height:  50vh;
+	margin-left: 0.5em;
+	margin-right:  0.5em;
+	margin-top:  0.5em;
+	margin-bottom:  0.5em;
+}
+
+.shop-container{
+	display:  flex;
+	flex-direction:  row;
+	margin-top:  2em;
+	margin-bottom:  2em;
+	overflow-x: scroll;
+	overflow-wrap: normal;
+}
+
+.btn{
+	margin:  1%;
+}
+
+.img-responsive{
+	height:  100%;
+	overflow: hidden;
+	max-width:  none;
+}
+
+.card-image{
+	height: 30%;
+	overflow:  hidden;
+}

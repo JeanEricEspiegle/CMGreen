@@ -1,117 +1,98 @@
-.ret-display{
-	margin-top:5%;
+.shop-info-container{
+	display:  flex;
+	flex-direction: row;
+	width:  90%;
+	margin-left:  5%;
+	margin-left:  5%;
+	height: 30vh;
+	box-shadow: 5px 5px 5px grey;
+	margin-bottom:  2.5%;
+	margin-top:  2.5%;
+}
+
+.shop-img{
 	position: relative;
 	display:  flex;
-	flex-direction: column;
-	height: 50vw;
-	width:  80%;
-	margin-left:  10%;
-	margin-right:  10%;
-	border: 1px solid black;
-	justify-content:flex-start;
-	overflow: hidden;
-}
-
-.ret-img{
-	position:  relative;
-	display:  block;
-	max-height: 50%;
-	width:  100%;
-	z-index:  -100;
-}
-
-.ret-title{
-	position:  relative;
-	display: flex;
-	z-index: 1;
-	justify-content: center;
-}
-
-.ret-title h1{
-	margin: 1%;
-	display: block;
-    font-size: 2em;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-
-.ret-desc{
-	display:  flex;
-	position:  relative;
-	text-align: justify;
-}
-
-.ret-desc p{
-	margin:  2%;
-}
-
-.ret-weed-display{
-	position:  relative;
-	display:  flex;
-	margin-top:  5%;
-	margin-left:  10%;
-	margin-right:  10%;
-	height: 80vw;
-	width:  80%;
-	border:  1px solid black;
-	overflow:  scroll;
-
-
-	flex-direction: row ;
-	flex-wrap: wrap ;
-	align-content: flex-start ;
-	justify-content: flex-start ;
-}
-
-.ret-weed-card{
-	margin:  2%;
-	position:  relative;
-	flex-direction: column;
-	justify-content: center;
-	width: 30%;
-	height:  32vw;
-	display:  flex;
-	justify-content: flex-start;
-	border:  1px solid black;
-}
-
-.ret-weed-pic{
-	position:  relative;
-	display:  flex;
-	align-items:  center;
-	height:  16vw;
-	width:  100%;
-	overflow: hidden;
-}
-
-.ret-weed-pic img{
+	float:  left;
+	min-width:  30%;
+	max-width:  50%;
 	height:  100%;
-	width:  100%;
+	overflow:  hidden;
 }
 
-.ret-weed-desc{
-	position:  relative;
+.shop-description p{
+	margin-right:  1em;
+	margin-left:  1em;
+	text-align:justify;
+	margin-top:  0;
+	margin-bottom:  0;
+}
+
+
+.shop-description{
+	height:  35%;
+	overflow:  hidden;
+	margin-bottom: 2.5%;
+}
+
+.shop-name{
+	height:  20%;
+}
+
+.shop-name h2{
+	margin:  0;
+	margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+.shop-address{
+	margin:  0;
+	height:20%;
+	overflow:  hidden;
+}
+.btn{
+	width:  auto;
+}
+
+.button{
 	display:  flex;
-	max-height:  50%;
-	width:  100%;
-	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	margin-bottom: 10px;
 }
 
-.ret-weed-desc p{
-	margin-left:  5%;
-	margin-right: 5%;
-	margin-top: 2%;
-	margin-bottom: 1%;
-	font-size: 1em;
+.text-container{
+	width:  50%;
 }
 
-.ret-weed-desc h3{
-	margin-left:  0;
-	margin-right: 0;
-	margin-top: 2%;
-	margin-bottom: 1%;
-	text-align:center;
+.shop-address p{
+	margin-right:  1em;
+	margin-left:  1em;
+	text-align:justify;
+	margin-top:  0;
+	margin-bottom:  0;
 }
+
+.weed-card-collection{
+	display:  flex;
+	flex-direction:  row;
+	flex-wrap:  wrap;
+	width: 90%;
+	margin-top:  2.5%;
+	margin-left: 5%;
+	margin-right:  5%;
+	margin-bottom:  2.5%;
+}
+
+.card{
+ 	height: 50vh;
+ }
+
+ .stats{
+ 	margin-bottom: 0;
+ 	margin-top:  0.5em;
+ }
+
+ .desc{
+ 	margin-bottom: 0;
+ 	margin-top:  0em;
+ }

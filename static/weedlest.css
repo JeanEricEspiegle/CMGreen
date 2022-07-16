@@ -1,0 +1,9 @@
+.weed-container{
+	width:  90%;
+	margin-right:  5%;
+	margin-left:  5%;
+	display:  flex;
+	flex-direction:  row;
+	flex-wrap:  wrap;
+	align-content: center;
+}
