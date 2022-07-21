@@ -2,14 +2,17 @@
 	display:  flex;
 	flex-direction: row;
 	width:  90%;
+	margin-right:  5%;
 	margin-left:  5%;
-	margin-left:  5%;
-	height: 30vh;
+	height: 35vh;
 	box-shadow: 5px 5px 5px grey;
 	margin-bottom:  2.5%;
 	margin-top:  2.5%;
 }
-
+.image{
+	max-height: 100%;
+	max-width: 100%;
+}
 .shop-img{
 	position: relative;
 	display:  flex;
@@ -61,7 +64,12 @@
 }
 
 .text-container{
-	width:  50%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-width: 70%;
+	min-width:  50%;
+	margin: 0;
 }
 
 .shop-address p{
@@ -76,15 +84,18 @@
 	display:  flex;
 	flex-direction:  row;
 	flex-wrap:  wrap;
-	width: 90%;
+	width: 95%;
 	margin-top:  2.5%;
-	margin-left: 5%;
-	margin-right:  5%;
+	margin-left: 2.55%;
+	margin-right:  2.55%;
 	margin-bottom:  2.5%;
+	align-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .card{
- 	height: 50vh;
+ 	height: 70vh;
  }
 
  .stats{
@@ -92,7 +103,22 @@
  	margin-top:  0.5em;
  }
 
+ .card-body{
+
+	max-height: 60%;
+ }
  .desc{
+	max-height: 70%;
+	overflow-y: scroll;
  	margin-bottom: 0;
  	margin-top:  0em;
+ }
+
+ .card-image{
+	text-align: center;
+	max-height: 20%;
+ }
+
+ .weed-custom{
+	margin: 0.5em;
  }

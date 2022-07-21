@@ -31,16 +31,32 @@ def shops():
     shopaddy = getShopAdd()
     images = getShopPhoto()
     desc = getShopDesc()
-    shopID=0
     return render_template('shops.html', len=len(shopnames), shopname=shopnames, photo =images, address= shopaddy, description = desc)
+
+@app.route('/strains', methods=['GET','POST'])
+def weedlist():
+    wlistnames = getWeedList()
+    weedinfostrain= []
+    for i in range(0,len(wlistnames)):
+        weedinfostrain.append(getWeedDetails(wlistnames[i])) 
+
+    return render_template('weedlist.html', len=len(weedinfostrain), weed = weedinfostrain)
 
 
 @app.route('/shop/<ID>')
-def displayShop(ID: int):
+def displayShop(ID):
     info = getShopInfo(ID)
     weed = getShopWeed(ID)
-    
-    return render_template('shop.html', len=len(weed), information= info, cannalist = weed)
+    name = ID
+    addy = info[2]
+    url = info[3]
+    desc = info[4]
+    weedinfo = []
+
+    for i in range(0,len(weed)):
+        weedinfo.append(getWeedDetails(weed[i][0])) 
+    print(weed)
+    return render_template('shop.html', len=len(weed), name=name, address = addy, imgurl=url, description = desc, cannalist=weed,weedinfo=weedinfo)
 
 ##############################################################################
 
@@ -78,7 +94,6 @@ def getShopPhoto():
         if sqliteConnection:
             sqliteConnection.close()
             print("The SQLite connection is closed")
-    print(df.imgurl)
     names = df.imgurl
     return (names)
 ##############################################################################
@@ -90,14 +105,13 @@ def getShopDesc():
         sql_query = pd.read_sql_query ('''SELECT * FROM shoplist''', sqliteConnection)
 
         df = pd.DataFrame(sql_query, columns = ['shopID', 'name', 'address', 'imgurl', 'description'])
-
     except sqlite3.Error as error:
         print("Failed to read data from sqlite table", error)
     finally:
         if sqliteConnection:
             sqliteConnection.close()
             print("The SQLite connection is closed")
-    print(df)
+
     names = df.description
     return (names)
 ##############################################################################
@@ -120,6 +134,7 @@ def getShopAdd():
     return (names)
 ##############################################################################
 def getShopInfo(id):
+    info = []
     try:
         sqliteConnection = sqlite3.connect('shops_data.db')
         cursor = sqliteConnection.cursor()
@@ -128,7 +143,6 @@ def getShopInfo(id):
         sql_select_query = """select * from shoplist where name = ?"""
         cursor.execute(sql_select_query, (id,))
         records = cursor.fetchall()
-        print("Printing ID ", id)
         for row in records:
             shopID =  row[0]
             name  =  row[1]
@@ -188,3 +202,50 @@ def getShopWeed(id):
             return rows
         elif id == "420 Cannabis Cafe Bar & Restaurant":
             return " "
+
+
+
+
+def getWeedDetails(id):
+    info = []
+    try:
+        sqliteConnection = sqlite3.connect('shops_data.db')
+        cursor = sqliteConnection.cursor()
+        print("Connected to SQLite")
+
+        sql_select_query = """select * from weedlist where name = ?"""
+        cursor.execute(sql_select_query, (id,))
+        records = cursor.fetchall()
+        for row in records:
+            name  =  row[0]
+            url  = row[1]
+            typ  =  row[2]
+            desc = row[3]
+            info = [name,url, typ, desc]
+        cursor.close()
+
+    except sqlite3.Error as error:
+        print("Failed to read data from sqlite table", error)
+    finally:
+        if sqliteConnection:
+            sqliteConnection.close()
+            print("The SQLite connection is closed")
+    return(info)
+
+
+def getWeedList():
+    try:
+        sqliteConnection = sqlite3.connect('shops_data.db')
+        print("Connected to SQLite")
+
+        sql_query = pd.read_sql_query ('''SELECT * FROM weedlist''', sqliteConnection)
+
+        df = pd.DataFrame(sql_query, columns = ['name', 'url', 'type', 'description'])
+
+    except sqlite3.Error as error:
+        print("Failed to read data from sqlite table", error)
+    finally:
+        if sqliteConnection:
+            sqliteConnection.close()
+            print("The SQLite connection is closed")
+    return(df.name)

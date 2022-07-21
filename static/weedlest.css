@@ -1,9 +1,29 @@
 .weed-container{
-	width:  90%;
-	margin-right:  5%;
-	margin-left:  5%;
+	width:  100%;
 	display:  flex;
 	flex-direction:  row;
 	flex-wrap:  wrap;
 	align-content: center;
+}
+
+.card{
+	height: 70vh;
+	margin: 1em;
+}
+
+.card-body{
+	height: 50%;
+	overflow-y: scroll;
+}
+
+.button{
+	align-items: center;
+	text-align: center;
+}
+
+.card-image{
+	display: flex;
+	max-height: 40%;
+	overflow: hidden;
+	justify-content: center
 }

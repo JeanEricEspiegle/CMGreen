@@ -30,3 +30,8 @@
 	height: 30%;
 	overflow:  hidden;
 }
+
+.card-body{
+	max-height: 40%;
+	overflow: hidden;
+}

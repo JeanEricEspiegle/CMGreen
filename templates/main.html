@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='shops.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='shop.css') }}">
+{% block stylesheet %}
+{% endblock %}
 </head>
 <body>
 
@@ -31,9 +31,9 @@
 	</div>
 
 	<header class="navbar navbar-center">
-		<a href="#" class="btn btn-link">Home</a>
-		<a href="#" class="btn btn-link">Shops</a>
-		<a href="#" class="btn btn-link">Strains</a>
+		<a href="{{ url_for('home') }}" class="btn btn-link">Home</a>
+		<a href="{{ url_for('shops') }}" class="btn btn-link">Shops</a>
+		<a href="{{ url_for('weedlist') }}" class="btn btn-link">Strains</a>
 	</header>
 
     {% block body %}

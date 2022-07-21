@@ -1,25 +1,25 @@
 {% extends 'main.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='shop.css') }}">
+{% endblock %}
 <!-- ################################################################################################################ -->
 {% block body %}
 	<div class="divider text-center" data-content="SHOP"></div>
 
 	<div class="shop-info-container">
 		<div class="shop-img">
-			<img src="img1.jpg"/>
+			<img src="/static/{{imgurl}}"/>
 		</div>
 		<div class="text-container">
 			<div class="shop-name text-center">
-				<h2>Shop name</h2>
+				<h2>{{name}}</h2>
 			</div>
 			<div class="shop-description">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
+				<p>{{ description }}</p>
 			</div>
 			<div class="shop-address">
-				<p>25, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>{{address}}</p>
 			</div>
 			<div class="button">
 				<a href="#" class="btn text-center">View on Google Maps</a>
@@ -32,27 +32,27 @@
 
 	<div class="weed-card-collection">
 		
-
-	<div class="column col-2 col-xs-12 weed-custom">
-		<div class="card weed-card">
-			<div class="card-image">
-	          	<img class="img-responsive" src="img1.jpg" alt="OS X Yosemite">
-	        	</div>
-            	<div class="card-header">
-            		<div class="card-title h5">Weed name</div>
-            		<div class="card-subtitle text-gray">Sativa/Indica/Hybrid</div>
-	        	</div>
-	        	<div class="card-body">
-	        		<p class="desc">To make a contribution to the world by making tools for the mind that advance humankind.</p>
-	        		<p class="stats"> Price: </p>
-	        		<p class="stats"> THC%:</p>
-	        	</div>
-
-	        	<div class="button">
-					<a href="#" class="btn text-center">View Strain Info</a>
+{%for i in range(0, len)%}
+		<div class="column col-2 col-xs-12 weed-custom">
+			<div class="card weed-card">
+				<div class="card-image">
+					<img class="image" src="/static/cannabis/{{weedinfo[i][1]}}" alt="OS X Yosemite">
+				</div>
+				<div class="card-header">
+					<div class="card-title h5">{{cannalist[i][0]}}</div>
+					<div class="card-subtitle text-gray">{{weedinfo[i][2]}}</div>
+				</div>
+				<div class="card-body">
+					<p class="desc"> {{weedinfo[i][3]}}</p>
+					<p class="stats"> Price: {{cannalist[i][1]}} thb</p>
+					<p class="stats"> THC%: {{cannalist[i][3]}}%</p>
 				</div>
 
+				<div class="button">
+					<a rel="nofollow" href="https://www.leafly.com/search?q={{cannalist[i][0]}}" target="_blank" class="btn text-center">View Strain Info</a>
+				</div>
 	        </div>
 		</div>
+{% endfor %}
 	</div>
 {% endblock %}

@@ -1,4 +1,11 @@
 {% extends 'main.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='shops.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='shop.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
 {% block body %}
 <div class="carousel">
   	<!-- carousel locator -->
@@ -13,22 +20,22 @@
     	<figure class="carousel-item">
       		<label class="item-prev btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-left"></i></label>
       		<label class="item-next btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-right"></i></label>
-      		<img class="img-responsive rounded" src="img1.jpg" alt="">
+      		<img class="img-responsive rounded" src="/static/Mstudio.jpg" alt="">
     	</figure>
     	<figure class="carousel-item">
       		<label class="item-prev btn btn-action btn-lg" for="slide-1"><i class="icon icon-arrow-left"></i></label>
       		<label class="item-next btn btn-action btn-lg" for="slide-3"><i class="icon icon-arrow-right"></i></label>
-      		<img class="img-responsive rounded" src="img3.jpg" alt="">
+      		<img class="img-responsive rounded" src="/static/deepgreen.jpg" alt="">
     	</figure>
     	<figure class="carousel-item">
       		<label class="item-prev btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-left"></i></label>
       		<label class="item-next btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-right"></i></label>
-      		<img class="img-responsive rounded" src="img2.jpg" alt="">
+      		<img class="img-responsive rounded" src="/static/cannabiscafe.jpg" alt="">
     	</figure>
     	<figure class="carousel-item">
       		<label class="item-prev btn btn-action btn-lg" for="slide-3"><i class="icon icon-arrow-left"></i></label>
       		<label class="item-next btn btn-action btn-lg" for="slide-1"><i class="icon icon-arrow-right"></i></label>
-      		<img class="img-responsive rounded" src="img4.jpg" alt="">
+      		<img class="img-responsive rounded" src="/static/highqueencnx.jpg" alt="">
     	</figure>
   	</div>
   		<!-- carousel navigation -->
@@ -43,7 +50,7 @@
 <!-- ########################################################################################################## -->
 <div class="shop-container">
 	{%for i in range(0, len)%}
-	<div class="column col-3 col-xs-12">
+	<div class="column col-2 col-xs-12">
     	<div class="card">
 			<div class="card-image">
 				<img class="img-responsive" src="/static/{{photo[i]}}" alt="{{photo[i]}}">
@@ -53,7 +60,7 @@
 			</div>
 			<div class="card-body">{{description[i]}}</div>
 			<div class="card-footer">
-				<a class="btn btn-primary" href="#cards">Do</a>
+				<a class="btn" onClick="location.href='{{url_for('displayShop',ID=shopname[i])}}'">View Shop</a>
 			</div>
     	</div>
     </div>
