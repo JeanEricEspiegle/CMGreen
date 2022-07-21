@@ -30,21 +30,17 @@ def shops():
     shopnames = getShopNames()
     shopaddy = getShopAdd()
     images = getShopPhoto()
-    print(images)
-    print(shopnames)
-    print(shopaddy)
+    desc = getShopDesc()
     shopID=0
-    for i in images:
-        shopID = shopID+1
-
-    return render_template('shopcards.html', len=len(shopnames), shopname=shopnames, photo =images, address= shopaddy, ID= shopID)
+    return render_template('shops.html', len=len(shopnames), shopname=shopnames, photo =images, address= shopaddy, description = desc)
 
 
 @app.route('/shop/<ID>')
 def displayShop(ID: int):
     info = getShopInfo(ID)
     weed = getShopWeed(ID)
-    return render_template('shop.html')
+    
+    return render_template('shop.html', len=len(weed), information= info, cannalist = weed)
 
 ##############################################################################
 
@@ -86,6 +82,25 @@ def getShopPhoto():
     names = df.imgurl
     return (names)
 ##############################################################################
+def getShopDesc():
+    try:
+        sqliteConnection = sqlite3.connect('shops_data.db')
+        print("Connected to SQLite")
+
+        sql_query = pd.read_sql_query ('''SELECT * FROM shoplist''', sqliteConnection)
+
+        df = pd.DataFrame(sql_query, columns = ['shopID', 'name', 'address', 'imgurl', 'description'])
+
+    except sqlite3.Error as error:
+        print("Failed to read data from sqlite table", error)
+    finally:
+        if sqliteConnection:
+            sqliteConnection.close()
+            print("The SQLite connection is closed")
+    print(df)
+    names = df.description
+    return (names)
+##############################################################################
 def getShopAdd():
     try:
         sqliteConnection = sqlite3.connect('shops_data.db')
@@ -119,7 +134,8 @@ def getShopInfo(id):
             name  =  row[1]
             addy  = row[2]
             url  =  row[3]
-            info = [shopID,name,addy,url]
+            desc = row[4]
+            info = [shopID,name,addy,url, desc]
         cursor.close()
 
     except sqlite3.Error as error:

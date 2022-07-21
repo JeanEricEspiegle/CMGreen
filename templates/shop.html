@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Shop Name</title>
-	<meta name="description" content="A list/directory/database of weed/cannabis/kush/ganja and retailers/distributors/sellers in Chiang Mai."/>
-	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-	<link rel="stylesheet" href="home.css">
-	<link rel="stylesheet" href="shop.css">
-</head>
-<body>
-	<div class="column col-sm-12 col-12 col-mx-auto" id="cont">
-	    <div class="parallax">
-			<div class="parallax-top-left" tabindex="1"></div>
-			<div class="parallax-top-right" tabindex="2"></div>
-			<div class="parallax-content">
-		    	<div class="parallax-front" id="title-text">
-		    		<h2>Chiang Mai</h2>
-		    		<h1>Greens</h1>
-		    	</div>
-		    	<div class="parallax-back">
-		    		<img src="background.jpg" class="img-responsive rounded" ...>
-		    	</div>
-		    </div>
-		</div>
-	</div>
-
-	<header class="navbar navbar-center">
-		<a href="#" class="btn btn-link">Home</a>
-		<a href="#" class="btn btn-link">Shops</a>
-		<a href="#" class="btn btn-link">Strains</a>
-	</header>
-
+{% extends 'main.html' %}
 <!-- ################################################################################################################ -->
-
+{% block body %}
 	<div class="divider text-center" data-content="SHOP"></div>
 
 	<div class="shop-info-container">
@@ -90,7 +55,4 @@
 	        </div>
 		</div>
 	</div>
-
-</body>
-<footer></footer>
-</html>
+{% endblock %}
