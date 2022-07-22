@@ -17,7 +17,12 @@ app.config.from_mapping(
 # a simple page that says hello
 @app.route('/')
 def home():
-    return render_template('home.html')
+    news = getNews()
+    titles = news.title
+    images = news.image
+    summs = news.summary
+    urls = news.url
+    return render_template('home.html', titles=titles, image=images,summ=summs,url=urls, len=len(titles))
 
 
 @app.route('/photo')
@@ -249,3 +254,21 @@ def getWeedList():
             sqliteConnection.close()
             print("The SQLite connection is closed")
     return(df.name)
+
+def getNews():
+    try:
+        sqliteConnection = sqlite3.connect('shops_data.db')
+        print("Connected to SQLite")
+
+        sql_query = pd.read_sql_query ('''SELECT * FROM news''', sqliteConnection)
+
+        df = pd.DataFrame(sql_query, columns = ['title', 'image', 'summary', 'url'])
+
+    except sqlite3.Error as error:
+        print("Failed to read data from sqlite table", error)
+    finally:
+        if sqliteConnection:
+            sqliteConnection.close()
+            print("The SQLite connection is closed")
+
+    return (df)
