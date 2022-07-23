@@ -1,6 +1,6 @@
 .card{
 	overflow: hidden;
-	height:  50vh;
+	height:  70vh;
 	margin-left: 0.5em;
 	margin-right:  0.5em;
 	margin-top:  0.5em;
@@ -8,6 +8,7 @@
 }
 
 .shop-container{
+	height: 70vh;
 	display:  flex;
 	flex-direction:  row;
 	margin-top:  2em;
@@ -26,8 +27,8 @@
 	max-width:  none;
 }
 
-.card-image{
-	height: 30%;
+.card .card-image{
+	max-height: 30vh;
 	overflow:  hidden;
 }
 
